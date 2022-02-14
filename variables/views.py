@@ -21,7 +21,7 @@ def variables_view(request):
         variable_dto = vl.create_variable(json.loads(request.body))
         variable = serializers.serialize('json', [variable_dto,])
         return HttpResponse(variable, 'application/json')
-
+        
 @csrf_exempt
 def variable_view(request, pk):
     if request.method == 'GET':

@@ -12,6 +12,11 @@ def get_measurement(var_pk):
     measurement = Measurement.objects.get(pk=var_pk)
     return measurement
 
+def delete_measurement(var_pk):
+    measurement = Measurement.objects.get(pk=var_pk)
+    measurement.delete()
+    return measurement
+
 def update_measurement(var_pk, new_var):
     measurement = get_measurement(var_pk)
     measurement.variable = get_variable(new_var["variable"])
